@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <style>
+    *{
+        box-sizing: border-box;
+    }
     body{
         font-family: 'poppins',sans-serif;
     }
@@ -32,6 +35,9 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    .ten{
+        color: white;
     }
     .price{
         font-size: 18px;
@@ -90,6 +96,10 @@
         flex:1;
         min-width: 280px;
         text-align: left;
+    }
+    .hero-text button{
+        margin-right:10px;
+        margin-top:10px;
     }
     .hero-text h1{
         color: white;
@@ -314,7 +324,37 @@ input:focus, textarea:focus{
     gap:10px;
       background-color: #020617;
     align-items: center;
-}.card2{
+}.social-box {
+    text-align: center;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    background: #0f172a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    transition: 0.3s;
+    border: 1px solid #1e293b;
+}
+
+.social-icon i {
+    font-size: 24px;
+    color: #94a3b8;
+}
+
+.social-icon:hover {
+    background: #ef4444;
+    transform: translateY(-5px);
+}
+
+.social-icon:hover i {
+    color: white;
+}
+.card2{
 padding: 10px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -333,6 +373,7 @@ padding: 10px;
 }
 .section-gray{
     background-color: #01030f;
+    border-top: 1px solid#1e293b ;
 }
 .one{
     color: white;
@@ -348,6 +389,9 @@ padding: 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+nav.scrolled{
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .logo {
@@ -374,9 +418,6 @@ padding: 10px;
 .nav-links a:hover {
     background-color: #f59e0b;
     color: #1f2937;
-}
-nav.scrolled{
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 /* Toggle button */
@@ -457,8 +498,9 @@ nav.scrolled{
     grid-template-columns: repeat(1,1fr);
    }
    .trick{
-    width: 350px;
+    width: 100%;
     height: 240px;
+    object-fit:cover;
    }
     .contact-container{
         flex-direction:column;
@@ -510,11 +552,12 @@ nav.scrolled{
     <section class="section-light">
  <div class="hero-container">
     <div class="hero-text">
-        <h1>Satyam Kumar Jha</h1>
-        <h2 id="Home"><i>Web Devloper</i> </h2>
+        <h1 id="Home">Satyam Kumar Jha</h1>
+        <h2><i>Web Devloper</i> </h2>
         <p><i>Hi,i'm Satyam<br>i build modern,responsive websites using HTML,CSS and Javascript.</i></p>
         <a href="#Projects"target="_blank"><button>View Projects</button></a>
         <a href="#Contact"target="_blank"><button>Contact Me</button></a>
+        <a href="resume.pdf"target="_blank"><button>Download Resume</button></a>
     </div>
     <div class="hero-img">
     <img src="shy.jpeg" alt="image of satyam">
@@ -617,7 +660,7 @@ nav.scrolled{
                 <h2>Personal Portfolio</h2>
                 <p>Built a modern personal portfolio website to showcase projects, skills, and experience using responsive design principles while creating an engaging and user-friendly interface for visitors.</p>
                 <article>HTML|CSS|Javascript|Responsive Design</article><br>
-                  <a href=""target="_blank"><button>Live Demo</button></a>
+                  <a href="https://sj0063259-netizen.github.io/My-Portfolio/"target="_blank"><button>Live Demo</button></a>
                 <a href=""target="_blank"><button>Github Code</button></a>
             </div>
         </div>
@@ -699,20 +742,24 @@ nav.scrolled{
                 </div>
             </div>
             <div class="contact-form">
-                <form>
-                    <label><p class="ice">Full Name </p></label>
-                    <input type="text"required>
-                    <br><br>
-                    <label><p class="ice">E-mail</p></label>
-                    <input type="text"required>
-                    <br><br>
-                    <label><p class="ice">Subject</p></label>
-                    <input type="text"required>
-                    <br><br>
-                    <label><p class="ice">Message</p></label>
-                    <textarea name="" id=""></textarea>
-                    <button type="submit">send message</button>
-                </form>
+                <!-- modify this form HTML and place wherever you want your form -->
+                <form action="https://formspree.io/f/mojnzkye" method="POST">
+
+    <label class="ice">Full Name</label>
+    <input type="text" name="name" required>
+
+    <label class="ice">Email</label>
+    <input type="email" name="email" required>
+
+    <label class="ice">Subject</label>
+    <input type="text" name="subject" required>
+
+    <label class="ice">Message</label>
+    <textarea name="message" required></textarea>
+
+    <button type="submit">Send Message</button>
+
+</form>
                </div>
                </div>
 </section>
@@ -731,27 +778,43 @@ nav.scrolled{
                 <a href="#Skills">Skills</a>
                 <a href="#Contact">Contact</a>
         </div>
-        <!---Card 3 Social-->
-         <div class="card3">
-            <div>
-            <i class="fa-solid fa-github icon"></i>
-            <p class="one">Github</p>
-            <a href="https://github.com/sj0063259-netizen"target="_blank"><button>Connect with me</button></a>
+        <div class="card3">
+
+    <div class="social-box">
+        <div class="social-icon">
+            <i class="fa-brands fa-github"></i>
         </div>
-          <div>
-            <i class="fa-brands fa-linkedin icon"></i>
-            <p class="one">linkedin</p>
-            <a href="https://www.linkedin.com/in/satyam-kumar005/"target="_blank"><button>Connect with me</button></a>
+        <p class="ten">GitHub</p>
+        <a href="https://github.com/sj0063259-netizen" target="_blank">
+            <button>Connect</button>
+        </a>
+    </div>
+
+    <div class="social-box">
+        <div class="social-icon">
+            <i class="fa-brands fa-linkedin"></i>
         </div>
-        <div>
-            <i class="fa-solid fa-envelope icon"></i>
-            <p class="one">E-mail</p>
-            <a href="https://mail.google.com/mail/u/0/#inbox"target="_blank"><button>Connect with me</button></a>
+        <p class="ten">LinkedIn</p>
+        <a href="https://www.linkedin.com/in/satyam-kumar005/" target="_blank">
+            <button>Connect</button>
+        </a>
+    </div>
+
+    <div class="social-box">
+        <div class="social-icon">
+            <i class="fa-solid fa-envelope"></i>
         </div>
+        <p class="ten">Email</p>
+        <a href="mailto:sj0063259@gmail.com">
+            <button>Connect</button>
+        </a>
+    </div>
+
+</div>
         </div>
-        </div>
-         <div class="price"><p>&copy; 2026 My Portfolio| 
-                   Designed by Satyam Kumar Jha| All Rights Reserved</p></div>
+         <div style="text-align:center; margin-top:30px; color:#94a3b8;">
+    © 2026 Satyam Kumar Jha • All Rights Reserved
+</div>
         </section> 
 <script>
 window.addEventListener("scroll", function() {
