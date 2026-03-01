@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: 'poppins',sans-serif;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    section{
+        padding: 80px 20px;
+    }
+    .hero-text{
+        animation: fadeup 1s ease forwards;
+    }
+    .hero-img{
+        animation: fadeup 1.2s ease forwards;
+    }
+    @keyframes fadeup{
+        from{
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .price{
+        font-size: 18px;
+        color: beige;
+        text-align: center;
+        gap: 10px;
+    }
+    .two{ font-size: 22px;
+  color: white;
+    }
+    .card1{
+        flex: 1;
+       object-fit: cover;
+        background-color: #020617;
+        text-align: center;
+    }
+    .ice{
+        color: white;
+        font-size: 24px;
+    }
+    button{
+        background: linear-gradient(135deg,#ef4444,#dc2626);
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(239,68,68,0.4);
+    }
+    .section-light{
+        background-color: #0f172a;
+    padding:60px 20px;
+    }
+    .section-dark{
+        background-color: #020617;
+        padding:60px 20px;
+         background: linear-gradient( rgba(0,0,0,0.7), rgba(0,0,0,0.8)
+  );
+    }
+    .hero-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: auto;
+        color: white;
+        align-items:center;
+        gap: clamp(20px, 5vw , 80px);
+    }
+    .hero-text{
+        flex:1;
+        min-width: 280px;
+        text-align: left;
+    }
+    .hero-text h1{
+        color: white;
+        font-size: 32px;
+     margin-bottom: 10px;
+    }
+    .hero-text h2{
+      color: aliceblue;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .hero-text p{
+        color:lightgrey;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .hero-img{
+        flex: 1;
+        min-width: 280px;
+        text-align: center;
+    }
+    .hero-img img{
+ width: 240px;
+ height: 240px;
+ object-fit: cover;
+ border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255,99,71,0.5);
+ border:4px solid beige;
+    }
+     .About-container{
+        display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         gap: 120px;
+         max-width: 1100px;
+        margin: auto;
+    }
+    .About-text{
+        flex: 1;
+        gap: 40px;
+        margin-bottom: 20px;
+    }
+    .About-text h2{
+        font-size: 32px;
+        color:#f1f5f9
+    }
+    .About-text p{
+        font-size: 20px;
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+    .About-img{
+        flex: 1;
+        margin-bottom: 20px;
+    }
+    .About-img img{
+        width:100%;
+        height: 300px;
+        box-shadow: rgb(0,0,0,0.7);
+        border-radius: 4px;
+        border-color: #94a3b8;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding: 10px;
+        gap: 20px;
+        max-width: 1100px;
+        margin: auto;
+        align-items: stretch;
+        
+    }
+    .grid-item{
+        background-color: #020617;
+        padding: 45px;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7);
+    text-align: center;
+     transition: transform 0.3s ease;
+     gap: 30px;
+    }
+    .grid-item:hover{
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(239,68,68,0.25);
+    }
+    .grid-item h2{
+        color: #f8fafc;
+    }
+    .grid-item p{
+        color: #94a3b8;
+    }
+    .grid-item article{
+        color:#64748b
+    }
+    .icon {
+        font-size: 40px;
+        color: #64748b;
+        margin-bottom: 15px;
+        transform: scale(1.2);
+    }
+    .icon:hover{
+        transform: translateY(-8px)rotate(8deg);
+        color: #ef4444;
+    }
+    .i {font-size: 15px;
+        color: white;
+        margin-bottom: 17px;
+        transform: scale(1.2);
+
+    }
+    .scan{
+        text-align: center;
+    }
+    .scan h2{
+          font-size: 32px;
+        color:#f1f5f9
+    }
+    .scan p{font-size: 20px;
+        color: #94a3b8;
+        line-height: 1.6;}
+        .trick{
+             width: 100%;
+    height: 200px;
+    object-fit: cover;
+        }
+    .pitch{
+        text-align: center;
+    }
+    .pitch h2{
+        font-size: 32px;
+        color: #f1f5f9;
+    }
+    .pitch p{
+        font-size: 20px;
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+    .contact-info{
+       display:grid;
+        gap:30px;
+        grid-template-columns: repeat(3,1fr);  
+    }
+    
+    .pro-container{
+        display:grid;
+        gap:30px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .pro-item{
+         background-color: #020617;
+        padding: 45px;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7);
+    text-align: center;
+     transition: transform 0.3s ease;
+     gap: 30px;}
+     .pro-item:hover{
+           transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(239,68,68,0.25);
+     }
+      .pro-item h2{
+        color: #f8fafc;
+    }
+    .pro-item p{
+        color: #94a3b8;
+    }
+    .pro-item article{
+        color:#64748b
+    }
+.contact-container{
+    display:flex;
+    gap:40px;
+    max-width:1100px;
+    margin:auto;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+
+.contact-info{
+    flex:1;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px;
+}
+
+.contact-form{
+    flex:1;
+    background-color:#020617;
+    padding:30px;
+    border-radius:12px;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:6px;
+    border:1px solid #334155;
+    background:#020617;
+    color:white;
+}
+
+input:focus, textarea:focus{
+    outline:none;
+    border-color:#ef4444;
+}
+
+.contact-form button{
+    width:100%;
+}
+.footer-container{
+    display:grid;
+        gap:30px;
+        grid-template-columns: repeat(3,1fr);
+}
+.card3{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 40px;
+    gap:10px;
+      background-color: #020617;
+    align-items: center;
+}.card2{
+padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+      background-color: #020617;
+    line-height: 1.6;
+}
+.card2 a{
+    display: block;
+    color: #e5e7eb;
+    text-decoration: none;
+    margin: 8px 0;
+}
+.card2 a:hover{
+    color:#f59e0b
+}
+.section-gray{
+    background-color: #01030f;
+}
+.one{
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    
+}nav {
+    background-color: #1f2937;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Links */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #f59e0b;
+    color: #1f2937;
+}
+nav.scrolled{
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Toggle button */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width:768px){
+     .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1f2937;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+      .contact-container{
+        flex-direction:column;
+    }
+
+    .contact-info{
+        grid-template-columns: repeat(1,1fr);
+    }
+  .contact-form{
+        width:100%;
+        object-fit: cover;
+    }
+}
+
+
+    /*Mobile Responsive Deign*/
+    @media (max-width: 600px){
+    .hero-container{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .hero-text{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 200px;
+        height: 200px;
+    }
+   .About-container{
+    flex-direction: column;
+    text-align: center;
+    gap:20px;
+   }
+   .About-text{
+    text-align: center;
+   }
+   .About-img img{
+    width: 300px;
+    height: 240px;
+   }
+   .grid-container{
+    flex-direction: column;
+    grid-template-columns: repeat(1,1fr);
+   }
+    .pro-container{
+    flex-direction: column;
+    grid-template-columns: repeat(1,1fr);
+   }
+   .trick{
+    width: 350px;
+    height: 240px;
+   }
+    .contact-container{
+        flex-direction:column;
+    }
+
+    .contact-info{
+        grid-template-columns: repeat(1,1fr);
+        width: 100%;
+        object-fit: cover;
+    }
+    .contact-form{
+        width:88%;
+        object-fit: cover;
+    }
+.ice{
+    font-size: 18px;
+}
+.footer-container{
+    grid-template-columns: repeat(1,1fr);
+    flex-direction: column;
+}
+.card3{
+    grid-template-columns: repeat(3,1fr);
+    object-fit: cover;
+}
+.price{
+    font-size: 18px;
+}
+    }
+</style>
+
+<body>
+     <nav>
+    <div class="logo">My Portfolio</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <div class="nav-links" id="navLinks">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Exprience">Exprience</a>
+                <a href="#Projects">Projects</a>
+                <a href="#Skills">Skills</a>
+                <a href="#Contact">Contact</a>
+    </div>
+</nav>
+    <section class="section-light">
+ <div class="hero-container">
+    <div class="hero-text">
+        <h1>Satyam Kumar Jha</h1>
+        <h2 id="Home"><i>Web Devloper</i> </h2>
+        <p><i>Hi,i'm Satyam<br>i build modern,responsive websites using HTML,CSS and Javascript.</i></p>
+        <a href="#Projects"target="_blank"><button>View Projects</button></a>
+        <a href="#Contact"target="_blank"><button>Contact Me</button></a>
+    </div>
+    <div class="hero-img">
+    <img src="shy.jpeg" alt="image of satyam">
+ </div>
+ </div>
+    </section>
+    <section class="section-dark">
+        <div class="About-container">
+            <div class="About-text">
+                <h2 id="About">About me</h2>
+                <p><i>I'm satyam and i create & devlop website using HTML,CSS & Javascript. I started my journey 3 months ago and my goal is to devlop E-Commerce website with fully Automation and advaced payment integated system.<br>I'm hardworking and can be trusted to fullfill the role  regarding it.</i></p>
+            </div>
+            <div class="About-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFQBEfIPoIdXNyKn04US9WzjouOzhaQNP6pA&s"alt="image of web devloper">
+                </div>
+            </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <i class="fa-solid fa-briefcase icon"></i>
+                <h2>Experience</h2>
+                <p>3+ months learning in web devlopment with practical projects.</p>
+                <a href="#Exprience" target="_blank"><button>View journey</button></a>
+            </div>
+             <div class="grid-item">
+                <i class="fa-solid fa-code icon"></i>
+                <h2>Projects</h2>
+                <p>Built beginner-friendly responsive websites using HTML and CSS</p>
+                <a href="#Projects" target="_blank"><button>View Projects</button></a>
+            </div>
+             <div class="grid-item">
+                <i class="fa-solid fa-lightbulb icon"></i>
+                <h2>Skills</h2>
+                <p>HTML,CSS,Responsive design & Basic frontend devlopment</p><br>
+                <a href="#Skills" target="_blank"><button>View  Skills</button></a>
+            </div>
+             <div class="grid-item">
+                <i class="fa-solid fa-envelope icon"></i>
+                <h2>Contact</h2>
+                <p>Open for freelance Oppurtunities,collaborations and learning expriences.</p><br><br>
+                <a href="#Contact" target="_blank"><button>Contact Me</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="section-light">
+    <div class="scan">
+     <h2 id="Exprience">Experience & Growth</h2>
+     <p><i>I have 3+ month experience by using HTML,CSS and Javascript</i></p>
+    </div>
+    <div class="grid-container">
+    <div class="grid-item">
+        <i class="fa-solid fa-laptop-code icon"></i>
+        <h2>Frontend Devlopment Journey</h2>
+        <p>Started my journey in frontend development, building multiple responsive user interface projects using HTML and CSS while strengthening core web fundamentals.</p><br>
+        <article><i class="fa-solid fa-calendar days i"></i>&nbsp;&nbsp;Jan 2026 — Present</article>
+    </div>
+    <div class="grid-item">
+        <i class="fa-solid fa-globe icon"></i>
+        <h2> Urban Bites Project</h2>
+        <p>Designed and deployed a complete restaurant website featuring an interactive menu, table booking system, and payment interface to simulate a real-world business project.</p><br>
+        <article><i class="fa-solid fa-calendar days i"></i>&nbsp;&nbsp;Feb2026-March2026</article>
+    </div>  
+    <div class="grid-item">
+        <i class="fa-solid fa-handshake icon"></i>
+        <h2>Faculty Website Discussion</h2>
+        <p>Collaborated with a faculty member to understand requirements for developing a personal portfolio website, gaining practical experience in client communication and project planning.</p><br>
+        <article><i class="fa-solid fa-calendar days i"></i>&nbsp;&nbsp;March2026</article>
+    </div>
+    <div class="grid-item">
+        <i class="fa-solid fa-rocket icon"></i>
+        <h2>Continuous Learning</h2>
+        <p>Continuously improving skills in responsive design, UI layout, and JavaScript fundamentals with a focus on creating modern and user-friendly web experiences.</p><br><br>
+        <article><i class="fa-solid fa-calendar days i"></i>&nbsp;&nbsp;2026-persent</article>
+    </div>  
+    </div>
+    </section>
+    <section class="section-dark">
+        <div class="pitch">
+            <h2 id="Projects">Turning Ideas Into Reality</h2>
+            <p><i>Pratical web projects designed with creativity,functionality,and continous learning.</i></p>
+        </div>
+        <div class="pro-container">
+            <div class="pro-item">
+                <img class="trick" src="pintu.png" alt="">
+                <h2>Urban Bites</h2>
+                <p>Developed a responsive restaurant website featuring an interactive menu,table booking system,and payment interferace to simmulate a real world buisness enviroment</p>
+                <article>HTML|CSS|Javascript|Responsive Design</article><br>
+                <a href="https://sj0063259-netizen.github.io/urban-bites-restaurant-webbrowse/"target="_blank"><button>Live Demo</button></a>
+                <a href="https://github.com/sj0063259-netizen/urban-bites-restaurant-webbrowse"target="_blank"><button>Github Code</button></a>
+            </div>
+             <div class="pro-item">
+                <img class="trick" src="faculty.jpeg" alt="">
+                <h2>Faculty Portfolio</h2>
+                <p>Designed a professional portfolio website for a faculty member based on requirement discussions, focusing on clean layout, user interface planning, and responsive design.</p>
+                <article>HTML|CSS</article><br>
+                  <a href="https://sj0063259-netizen.github.io/portfolio-graphics/"target="_blank"><button>Live Demo</button></a>
+                <a href="https://github.com/sj0063259-netizen/portfolio-graphics"target="_blank"><button>Github Code</button></a>
+            </div>
+             <div class="pro-item">
+                <img class="trick" src="port.png" alt="">
+                <h2>Personal Portfolio</h2>
+                <p>Built a modern personal portfolio website to showcase projects, skills, and experience using responsive design principles while creating an engaging and user-friendly interface for visitors.</p>
+                <article>HTML|CSS|Javascript|Responsive Design</article><br>
+                  <a href=""target="_blank"><button>Live Demo</button></a>
+                <a href=""target="_blank"><button>Github Code</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="section-light ">
+    <div class="pitch">
+     <h2 id="Skills">Technical Skills</h2>
+            <p><i>A growing set of frontend devlopment skills focussed on creating modern and functional websites.</i></p>
+            </div>
+    <div class="pro-container">
+        <div class="pro-item">
+            <i class="fa-solid fa-code icon"></i>
+            <h2>HTML</h2>
+            <p>Semantic structure and clean layout creation for modern webpages.</p>
+        </div>
+         <div class="pro-item">
+            <i class="fa-solid fa-paintbrush icon"></i>
+            <h2>CSS</h2>
+            <p>Styling and visual design to create attractive, user-friendly interfaces.</p>
+        </div>
+         <div class="pro-item">
+            <i class="fa-solid fa-bolt icon"></i>
+            <h2>JAVASCRIPT</h2>
+            <p>Adds interactivity and dynamic behavior to enhance user experience.</p>
+        </div>
+        <div class="pro-item">
+            <i class="fa-solid fa-mobile-screen-button icon"></i>
+            <h2>Responsive Design</h2>
+            <p>Ensures websites adapt smoothly across mobile, tablet, and desktop devices.</p>
+        </div>
+        <div class="pro-item">
+            <i class="fa-solid fa-object-group icon"></i>
+            <h2>UI Layout</h2>
+            <p>Designing structured and balanced page layouts using Flexbox and Grid.</p>
+        </div>
+        <div class="pro-item">
+            <i class="fa-solid fa-github icon"></i>
+            <h2>GitHub</h2>
+            <p>Version control and deployment platform for managing and hosting projects.</p>
+        </div>
+    </div>
+</section>
+<section class="section-dark">
+    <div class="pitch">
+<h2 id="Contact">Contact me</h2>
+<p><i>Let's discuss your project or opportunity</i></p>
+    </div>
+    <div class="contact-container">
+        <div class="contact-info">
+                <div class="pro-item">
+                    <i class="fa-solid fa-location-dot icon"></i>
+                    <h2>Location</h2>
+                    <p>Benglaru|Karnataka|India</p>
+                </div>
+                  <div class="pro-item">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <h2>E-Mail</h2>
+                    <p>sj0063259@gmail.com</p>
+                </div>
+                  <div class="pro-item">
+                    <i class="fa-solid fa-phone icon"></i>
+                    <h2>Phone</h2>
+                    <p>8987144290</p>
+                </div>
+                  <div class="pro-item">
+                    <i class="fa-solid fa-briefcase icon"></i>
+                    <h2>Availability Status</h2>
+                    <p>Open for freelance projects</p>
+                </div>
+                 <div class="pro-item">
+                    <i class="fa-brands fa-linkedin icon"></i>
+                    <h2>Linkeldn</h2>
+                    <a href="https://www.linkedin.com/in/satyam-kumar005/"target="_blank"><button>Visit</button></a>
+                </div>
+                 <div class="pro-item">
+                    <i class="fa-solid fa-github icon"></i>
+                    <h2>Github</h2>
+                     <a href="https://github.com/sj0063259-netizen"target="_blank"><button>Visit</button></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <label><p class="ice">Full Name </p></label>
+                    <input type="text"required>
+                    <br><br>
+                    <label><p class="ice">E-mail</p></label>
+                    <input type="text"required>
+                    <br><br>
+                    <label><p class="ice">Subject</p></label>
+                    <input type="text"required>
+                    <br><br>
+                    <label><p class="ice">Message</p></label>
+                    <textarea name="" id=""></textarea>
+                    <button type="submit">send message</button>
+                </form>
+               </div>
+               </div>
+</section>
+    <section class="section-gray">
+     <div class="footer-container">
+         <!---Card 1 About-->
+        <div class="card1">
+        <p class="two"><i>I am a frontend developer passionate about building modern and responsive websites. I enjoy creating clean user interfaces and continuously learning new technologies.</i></p>
+        </div>
+        <!---Card 2 Links-->
+        <div class="card2">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Exprience">Exprience</a>
+                <a href="#Projects">Projects</a>
+                <a href="#Skills">Skills</a>
+                <a href="#Contact">Contact</a>
+        </div>
+        <!---Card 3 Social-->
+         <div class="card3">
+            <div>
+            <i class="fa-solid fa-github icon"></i>
+            <p class="one">Github</p>
+            <a href="https://github.com/sj0063259-netizen"target="_blank"><button>Connect with me</button></a>
+        </div>
+          <div>
+            <i class="fa-brands fa-linkedin icon"></i>
+            <p class="one">linkedin</p>
+            <a href="https://www.linkedin.com/in/satyam-kumar005/"target="_blank"><button>Connect with me</button></a>
+        </div>
+        <div>
+            <i class="fa-solid fa-envelope icon"></i>
+            <p class="one">E-mail</p>
+            <a href="https://mail.google.com/mail/u/0/#inbox"target="_blank"><button>Connect with me</button></a>
+        </div>
+        </div>
+        </div>
+         <div class="price"><p>&copy; 2026 My Portfolio| 
+                   Designed by Satyam Kumar Jha| All Rights Reserved</p></div>
+        </section> 
+<script>
+window.addEventListener("scroll", function() {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+</body>
+</html>
